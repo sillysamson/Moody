@@ -1,0 +1,18 @@
+/* Colour and elevation tokens. Layers: 0 background · 1 surfaces (--s1) · 2 controls (--s2) · 3 floating (--float) · 4 overlays (--scrim). */
+:root{color-scheme:light dark;
+--bg:light-dark(#efe9da,#121912);--s1:light-dark(#faf6ec,#1c241b);--s2:light-dark(#eee7d5,#283226);--s3:light-dark(#e4dcc6,#334130);
+--tx:light-dark(#25301f,#ece8da);--mu:light-dark(#566249,#a9b39d);--pr:light-dark(#4a6b43,#a8c79b);--on:light-dark(#f8f5ea,#15210f);
+--prs:light-dark(rgba(74,107,67,.14),rgba(168,199,155,.18));--ter:light-dark(#b4603f,#e3a888);--ters:light-dark(rgba(180,96,63,.14),rgba(227,168,136,.18));--er:light-dark(#8f3822,#f4a695);
+--line:light-dark(rgba(60,70,40,.14),rgba(255,255,255,.1));--float:light-dark(rgba(250,246,236,.74),rgba(32,44,31,.74));--scrim:light-dark(rgba(30,38,24,.42),rgba(0,0,0,.55));
+--b1:light-dark(rgba(150,184,136,.5),rgba(63,100,64,.55));--b2:light-dark(rgba(222,160,128,.4),rgba(130,74,50,.4));--b3:light-dark(rgba(228,208,140,.45),rgba(96,98,42,.35));
+--e1:0 1px 2px light-dark(rgba(58,48,22,.07),rgba(0,0,0,.35)),0 3px 10px light-dark(rgba(58,48,22,.06),rgba(0,0,0,.25));
+--e2:0 1px 3px light-dark(rgba(58,48,22,.1),rgba(0,0,0,.4)),0 8px 20px light-dark(rgba(58,48,22,.09),rgba(0,0,0,.35));
+--e3:0 2px 6px light-dark(rgba(58,48,22,.1),rgba(0,0,0,.4)),0 18px 44px light-dark(rgba(58,48,22,.2),rgba(0,0,0,.5));
+--glass-fill:light-dark(rgba(250,246,236,.3),rgba(28,38,27,.3));--glass-hi:light-dark(rgba(255,255,255,.2),rgba(255,255,255,.07));--glass-lo:light-dark(rgba(178,178,178,.1),rgba(255,255,255,0));
+--glass-edge:light-dark(rgba(255,255,255,.5),rgba(255,255,255,.14));--float-solid:light-dark(#f4efe1,#212c20);
+--glass-ring:inset 0 0 0 1px var(--glass-edge),inset 0 1.5px 0 light-dark(rgba(255,255,255,.7),rgba(255,255,255,.2)),inset 0 -1px 0 light-dark(rgba(60,50,20,.1),rgba(0,0,0,.3));
+--tap:46px}
+:root[data-theme="light"]{color-scheme:light}:root[data-theme="dark"]{color-scheme:dark}
+:root[data-tap="large"]{--tap:56px}
+:root[data-contrast="high"]{--tx:light-dark(#0e150a,#ffffff);--mu:light-dark(#2d3825,#d8dfce);--line:light-dark(rgba(20,30,10,.55),rgba(255,255,255,.55));--pr:light-dark(#35512f,#c4e0b8)}
+@supports not (color:light-dark(red,blue)){:root{--bg:#efe9da;--s1:#faf6ec;--s2:#eee7d5;--s3:#e4dcc6;--tx:#25301f;--mu:#566249;--pr:#4a6b43;--on:#f8f5ea;--prs:rgba(74,107,67,.14);--ter:#b4603f;--ters:rgba(180,96,63,.14);--er:#8f3822;--line:rgba(60,70,40,.14);--float:rgba(250,246,236,.8);--glass-fill:rgba(250,246,236,.3);--glass-hi:rgba(255,255,255,.2);--glass-lo:rgba(178,178,178,.1);--glass-edge:rgba(255,255,255,.5);--float-solid:#f4efe1;--glass-ring:inset 0 0 0 1px rgba(255,255,255,.5);--scrim:rgba(30,38,24,.42);--b1:rgba(150,184,136,.5);--b2:rgba(222,160,128,.4);--b3:rgba(228,208,140,.45);--e1:0 2px 8px rgba(58,48,22,.08);--e2:0 6px 18px rgba(58,48,22,.1);--e3:0 16px 40px rgba(58,48,22,.2)}}

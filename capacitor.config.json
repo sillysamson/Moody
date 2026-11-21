@@ -1,0 +1,6 @@
+{
+  "appId": "com.interception.app",
+  "appName": "Interception",
+  "webDir": "dist",
+  "android": { "webContentsDebuggingEnabled": false, "allowMixedContent": false }
+}

@@ -1,0 +1,36 @@
+name: Build APK
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  apk:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: npm install
+      - run: npm install @capacitor/core @capacitor/cli @capacitor/android
+      - run: npm run build -- --base=./
+      - name: Capacitor config
+        run: |
+          cat > capacitor.config.json <<'CFG'
+          {"appId":"com.sillysamson.interception","appName":"Interception","webDir":"dist"}
+          CFG
+      - run: '[ -d android ] || npx cap add android'
+      - run: npx cap sync android
+      - name: Build debug APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: interception-apk
+          path: android/app/build/outputs/apk/debug/*.apk
